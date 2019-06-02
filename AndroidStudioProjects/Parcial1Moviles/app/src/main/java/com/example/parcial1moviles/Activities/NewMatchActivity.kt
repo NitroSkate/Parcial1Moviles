@@ -2,7 +2,9 @@ package com.example.parcial1moviles.Activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils.isEmpty
 import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.parcial1moviles.Entities.Matches
 import com.example.parcial1moviles.R
@@ -46,11 +48,23 @@ class NewMatchActivity : AppCompatActivity() {
                 pointsb.text = points2.toString()
             }
             enviar.setOnClickListener {
-                val win = if(points1 > points2 ) namea.text.toString() else nameb.text.toString()
+                val win = if(points1 > points2 ) namea.text.toString() else if (points1 == points2) "Empate" else nameb.text.toString()
                 var dato = Matches(namea.text.toString(),nameb.text.toString(),points1,
-                    points2, win, date.text.toString(), time.text.toString())
-                matchesViewmodel.insert(dato)
-                Toast.makeText(this, win, Toast.LENGTH_SHORT).show()
+                    points2, win, date.dayOfMonth.toString()+"/"+date.month.toString()+"/"+date.year.toString(), time.text.toString())
+                var flag = true
+                matchesViewmodel.allData.observe(this, Observer { datos ->
+                    datos?.let {
+                        for(i in 0 .. it.size-1){
+                            if((it[i].date == date.dayOfMonth.toString()+"/"+date.month.toString()+"/"+date.year.toString() && it[i].time == time.text.toString()) && (namea.text.toString() == "" || nameb.text.toString() == "" )){
+                                flag = false
+                            }
+                            if(namea.text.toString().isEmpty() || nameb.text.toString().isEmpty()) {
+                                flag = false
+                            }
+                        }
+                    }
+                })
+                if(flag) matchesViewmodel.insert(dato) else Toast.makeText(this, "No se pudo insertar el partido", Toast.LENGTH_SHORT).show()
             }
         }
 

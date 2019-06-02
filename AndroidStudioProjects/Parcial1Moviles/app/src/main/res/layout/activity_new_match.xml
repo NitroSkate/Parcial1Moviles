@@ -126,13 +126,30 @@
                             android:textSize="12sp" />
         </LinearLayout>
         </LinearLayout>
-        <EditText
+
+        <DatePicker
+                android:id="@+id/date"
+                android:layout_width="250dp"
+                android:layout_height="75dp"
+                android:layout_gravity="center"
+                android:datePickerMode="spinner"
+                android:calendarViewShown="false">
+
+        </DatePicker>
+        <!--<TimePicker
+                android:id="@+id/time"
+                android:layout_width="250dp"
+                android:layout_height="75dp"
+                android:layout_gravity="center"
+                android:timePickerMode="spinner"
+        ></TimePicker>-->
+        <!--<EditText
                 android:id="@+id/date"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:hint="DD/MM/YYYY"/>
+                android:hint="DD/MM/YYYY"/>-->
         <EditText
                 android:id="@+id/time"
                 android:layout_gravity="center"

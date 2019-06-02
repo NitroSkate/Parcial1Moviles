@@ -3,6 +3,7 @@ package com.example.parcial1moviles
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.parcial1moviles.Activities.LastMatchesActivity
 import com.example.parcial1moviles.Activities.NewMatchActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -15,6 +16,10 @@ class MainActivity : AppCompatActivity() {
         this.apply {
             partido_nuevo.setOnClickListener {
                 val intent = Intent(this@MainActivity, NewMatchActivity::class.java)
+                startActivity(intent)
+            }
+            partido_anterior.setOnClickListener {
+                val intent = Intent(this@MainActivity, LastMatchesActivity::class.java)
                 startActivity(intent)
             }
         }

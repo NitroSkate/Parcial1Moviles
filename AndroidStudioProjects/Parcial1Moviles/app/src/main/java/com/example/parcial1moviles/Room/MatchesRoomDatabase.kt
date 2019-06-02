@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.example.parcial1moviles.Daos.MatchesDao
 import com.example.parcial1moviles.Entities.Matches
 
-@Database(entities = [Matches::class], version = 1, exportSchema = false)
+@Database(entities = [Matches::class], version = 2, exportSchema = false)
 abstract class MatchesRoomDatabase : RoomDatabase() {
 
     abstract fun matchesDao(): MatchesDao
