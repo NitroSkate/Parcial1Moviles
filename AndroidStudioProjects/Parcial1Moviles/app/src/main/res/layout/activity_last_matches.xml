@@ -7,10 +7,10 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context="com.example.parcial1moviles.Activities.LastMatchesActivity">
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:layout_gravity="center"
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_gravity="center"
     android:id="@+id/Title" android:text="Blank Space"/>
 
-    <LinearLayout android:id="@+id/fragment" android:layout_width="match_parent" android:layout_weight="2" android:layout_height="wrap_content"
+    <LinearLayout android:layout_marginTop="35dp" android:id="@+id/fragment" android:layout_width="match_parent"  android:layout_height="wrap_content"
     android:orientation="vertical" ></LinearLayout>
 
 </LinearLayout>

@@ -2,6 +2,7 @@ package com.example.parcial1moviles.Activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import android.text.TextUtils.isEmpty
 import android.widget.Toast
 import androidx.lifecycle.Observer
@@ -52,13 +53,13 @@ class NewMatchActivity : AppCompatActivity() {
                 var dato = Matches(namea.text.toString(),nameb.text.toString(),points1,
                     points2, win, date.dayOfMonth.toString()+"/"+date.month.toString()+"/"+date.year.toString(), time.text.toString())
                 var flag = true
+                if(TextUtils.isEmpty(namea.text) || TextUtils.isEmpty(nameb.text) || TextUtils.isEmpty(time.text)) {
+                    flag = false
+                }
                 matchesViewmodel.allData.observe(this, Observer { datos ->
                     datos?.let {
                         for(i in 0 .. it.size-1){
-                            if((it[i].date == date.dayOfMonth.toString()+"/"+date.month.toString()+"/"+date.year.toString() && it[i].time == time.text.toString()) && (namea.text.toString() == "" || nameb.text.toString() == "" )){
-                                flag = false
-                            }
-                            if(namea.text.toString().isEmpty() || nameb.text.toString().isEmpty()) {
+                            if((it[i].date == date.dayOfMonth.toString()+"/"+date.month.toString()+"/"+date.year.toString() && it[i].time == time.text.toString()) ){
                                 flag = false
                             }
                         }

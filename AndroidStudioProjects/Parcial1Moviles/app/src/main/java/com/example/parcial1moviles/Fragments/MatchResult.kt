@@ -7,7 +7,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.parcial1moviles.Entities.Matches
 import com.example.parcial1moviles.R
+import kotlinx.android.synthetic.main.fragment_match_result.view.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -26,16 +28,11 @@ private const val ARG_PARAM2 = "param2"
  */
 class MatchResult : Fragment() {
     // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    var matches: Matches? = null
     private var listener: OnFragmentInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
 
     override fun onCreateView(
@@ -43,13 +40,17 @@ class MatchResult : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_match_result, container, false)
+        val view = inflater.inflate(R.layout.fragment_match_result, container, false)
+        view.apply {
+            team.text = matches?.winner
+            finish.setOnClickListener {
+                var finish = Matches("","",0,0,"","","")
+                listener?.onClickScores(finish)
+            }
+        }
+        return view
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    fun onButtonPressed(uri: Uri) {
-        listener?.onFragmentInteraction(uri)
-    }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -78,7 +79,8 @@ class MatchResult : Fragment() {
      */
     interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        fun onFragmentInteraction(uri: Uri)
+        fun onClickListElement(match: Matches)
+        fun onClickScores(match: Matches)
     }
 
     companion object {
@@ -92,8 +94,10 @@ class MatchResult : Fragment() {
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(){
-
+        fun newInstance(match: Matches): MatchResult{
+            var fragment = MatchResult()
+            fragment.matches = match
+            return fragment
         }
     }
 }

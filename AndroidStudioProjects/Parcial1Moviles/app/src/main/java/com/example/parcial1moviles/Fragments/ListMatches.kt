@@ -105,6 +105,7 @@ class ListMatches : Fragment() {
     interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         fun onClickListElement(match: Matches)
+        fun onClickScores(match: Matches)
     }
 
     companion object {
