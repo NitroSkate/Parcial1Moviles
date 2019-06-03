@@ -1,5 +1,6 @@
 package com.example.parcial1moviles.Activities
 
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -28,16 +29,23 @@ class LastMatchesActivity : AppCompatActivity(), ListMatches.OnFragmentInteracti
     }
 
     fun initFragment(match: Matches){
-        if(match.winner == ""){
-            Title.text = "Partidos Jugados "
-            listfragment = ListMatches.newInstance()
-            changefragment(R.id.fragment, listfragment)
+        if(resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT) {
+            if (match.winner == "") {
+                Title.text = "Partidos Jugados "
+                listfragment = ListMatches.newInstance()
+                changefragment(R.id.fragment, listfragment)
+            } else {
+                Toast.makeText(this, "olv", Toast.LENGTH_SHORT).show()
+                Title.text = "Resultados del partido"
+                matchResult = com.example.parcial1moviles.Fragments.MatchResult.newInstance(match)
+                changefragment(R.id.fragment, matchResult)
+            }
         }
-        else{
-            Toast.makeText(this, "olv", Toast.LENGTH_SHORT).show()
-            Title.text = "Resultados del partido"
-            matchResult = com.example.parcial1moviles.Fragments.MatchResult.newInstance(match)
-            changefragment(R.id.fragment, matchResult)
+        if(resources.configuration.orientation === Configuration.ORIENTATION_LANDSCAPE){
+            listfragment = ListMatches.newInstance()
+            matchResult = MatchResult.newInstance(match)
+            changefragment(R.id.landscape1, listfragment)
+            changefragment(R.id.landscape2, matchResult)
         }
     }
 
@@ -47,6 +55,11 @@ class LastMatchesActivity : AppCompatActivity(), ListMatches.OnFragmentInteracti
     override fun onClickListElement(match: Matches) {
         Toast.makeText(this, match.date, Toast.LENGTH_SHORT).show()
         initFragment(match)
+    }
+    override fun onClickListElementLand(match: Matches) {
+        matchResult = MatchResult.newInstance(match)
+        changefragment(R.id.landscape2, matchResult)
+
     }
     override fun onClickScores(match: Matches) {
         initFragment(match)

@@ -1,6 +1,7 @@
 package com.example.parcial1moviles.Fragments
 
 import android.content.Context
+import android.content.res.Configuration
 import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -62,7 +63,13 @@ class ListMatches : Fragment() {
     fun initrecycler(view: View){
         val linearlayoutmanager = LinearLayoutManager(this.context)
 
-        matchesAdapter = MatchesAdapter({match : Matches -> listener?.onClickListElement(match)})
+        if(resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT) {
+
+            matchesAdapter = MatchesAdapter({ match: Matches -> listener?.onClickListElement(match) })
+        }
+        if(resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE){
+            matchesAdapter = MatchesAdapter({ match: Matches -> listener?.onClickListElementLand(match) })
+        }
 
         view.recyclermatch.adapter = matchesAdapter as MatchesAdapter
 
@@ -105,6 +112,7 @@ class ListMatches : Fragment() {
     interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         fun onClickListElement(match: Matches)
+        fun onClickListElementLand(match: Matches)
         fun onClickScores(match: Matches)
     }
 
