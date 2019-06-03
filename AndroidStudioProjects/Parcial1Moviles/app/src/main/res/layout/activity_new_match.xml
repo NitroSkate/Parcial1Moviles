@@ -1,169 +1,215 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:app="http://schemas.android.com/apk/res-auto"
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:orientation="horizontal"
               tools:context=".Activities.NewMatchActivity">
     <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-        <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="0dp">
-
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/darkorange"
+              android:orientation="horizontal">
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_marginTop="40dp"
-                android:layout_weight="1">
-
-
-            <EditText
-                    android:id="@+id/namea"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10sp"
-                    android:clickable="false"
-                    android:gravity="center"
-                    android:hint="Equipo A"
-                    android:textColor="#000"
-                    android:textSize="20sp" />
-
-
-            <TextView
-                    android:id="@+id/pointsa"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:clickable="false"
-                    android:text="0"
-                    android:gravity="center"
-                    android:textColor="#000"
-                    android:textSize="50sp" />
-            <Button
-                android:id="@+id/pointsa3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:text="+3"
-                android:textSize="12sp" />
-            <Button
-                    android:id="@+id/pointsa2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="50dp"
-                    android:text="+2"
-                    android:textSize="12sp" />
-            <Button
-                    android:id="@+id/pointsa1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="50dp"
-                    android:text="+1"
-                    android:textSize="12sp" />
-        </LinearLayout>
-
-
-
-        <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="40dp"
-                android:gravity="center"
-                android:layout_weight="1"
                 android:orientation="vertical">
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="0dp">
 
-                    <EditText
-                            android:id="@+id/nameb"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="10sp"
-                            android:clickable="false"
-                            android:gravity="center"
-                            android:hint="Equipo B"
-                            android:textColor="#000"
-                            android:textSize="20sp" />
-
-                    <TextView
-                            android:id="@+id/pointsb"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="30dp"
-                            android:clickable="false"
-                            android:gravity="center"
-                            android:text="0"
-                            android:textColor="#000"
-                            android:textSize="50sp" />
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginTop="40dp"
+                    android:layout_weight="1">
 
 
-                    <Button
-                            android:id="@+id/pointsb3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="50dp"
-                            android:text="+3"
-                            android:textSize="12sp" />
-                    <Button
-                            android:id="@+id/pointsb2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="50dp"
-                            android:text="+2"
-                            android:textSize="12sp" />
-                    <Button
-                            android:id="@+id/pointsb1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="50dp"
-                            android:text="+1"
-                            android:textSize="12sp" />
-        </LinearLayout>
-        </LinearLayout>
+                <EditText
+                        android:id="@+id/namea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10sp"
+                        android:clickable="false"
+                        android:gravity="center"
+                        android:backgroundTint="@color/white"
+                        android:hint="Equipo A"
+                        android:textColorHint="@color/cardview_light_background"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
 
-        <DatePicker
-                android:id="@+id/date"
-                android:layout_width="250dp"
-                android:layout_height="75dp"
-                android:layout_gravity="center"
-                android:datePickerMode="spinner"
-                android:calendarViewShown="false">
 
-        </DatePicker>
-        <!--<TimePicker
-                android:id="@+id/time"
-                android:layout_width="250dp"
-                android:layout_height="75dp"
-                android:layout_gravity="center"
-                android:timePickerMode="spinner"
-        ></TimePicker>-->
-        <!--<EditText
-                android:id="@+id/date"
+                <TextView
+                        android:id="@+id/pointsa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:clickable="false"
+                        android:text="0"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="50sp" />
+                <Button
+                    android:id="@+id/pointsa3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:text="+3"
+                    android:background="@color/black"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+                <Button
+                        android:id="@+id/pointsa2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:text="+2"
+                        android:background="@color/black"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+                <Button
+                        android:id="@+id/pointsa1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:text="+1"
+                        android:background="@color/black"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="40dp"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                        <EditText
+                                android:id="@+id/nameb"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10sp"
+                                android:clickable="false"
+                                android:gravity="center"
+                                android:hint="Equipo B"
+                                android:backgroundTint="@color/white"
+                                android:textColorHint="@color/cardview_light_background"
+                                android:textColor="@color/white"
+                                android:textSize="20sp" />
+
+                        <TextView
+                                android:id="@+id/pointsb"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="30dp"
+                                android:clickable="false"
+                                android:gravity="center"
+                                android:textColor="@color/white"
+                                android:text="0"
+                                android:textSize="50sp" />
+
+
+                        <Button
+                                android:id="@+id/pointsb3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="50dp"
+                                android:text="+3"
+                                android:background="@color/black"
+                                android:textColor="@color/white"
+                                android:textSize="12sp" />
+                        <Button
+                                android:id="@+id/pointsb2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="50dp"
+                                android:text="+2"
+                                android:background="@color/black"
+                                android:textColor="@color/white"
+                                android:textSize="12sp" />
+                        <Button
+                                android:id="@+id/pointsb1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="50dp"
+                                android:text="+1"
+                                android:background="@color/black"
+                                android:textColor="@color/white"
+                                android:textSize="12sp" />
+            </LinearLayout>
+            </LinearLayout>
+
+            <DatePicker
+                    android:id="@+id/date"
+                    android:layout_width="250dp"
+                    android:layout_height="75dp"
+                    android:layout_gravity="center"
+                    android:datePickerMode="spinner"
+                    android:calendarViewShown="false">
+
+            </DatePicker>
+            <!--<TimePicker
+                    android:id="@+id/time"
+                    android:layout_width="250dp"
+                    android:layout_height="75dp"
+                    android:layout_gravity="center"
+                    android:timePickerMode="spinner"
+            ></TimePicker>-->
+            <!--<EditText
+                    android:id="@+id/date"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:hint="DD/MM/YYYY"/>-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <EditText
+                        android:id="@+id/hour"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_width="75dp"
+                        android:digits="0123456789."
+                        android:backgroundTint="@color/white"
+                        android:textColorHint="@color/cardview_light_background"
+                        android:textColor="@color/white"
+                        android:inputType="numberDecimal"
+                        android:layout_height="wrap_content"
+                        android:hint="HH"/>
+                <EditText
+                    android:id="@+id/minute"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_width="75dp"
+                    android:backgroundTint="@color/white"
+                    android:textColorHint="@color/cardview_light_background"
+                    android:textColor="@color/white"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789."
+                    android:inputType="numberDecimal"
+                    android:hint="MM"/>
+            </LinearLayout>
+            <Button
+                android:id="@+id/enviar"
                 android:layout_gravity="center"
                 android:gravity="center"
+                android:layout_marginTop="25dp"
                 android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:hint="DD/MM/YYYY"/>-->
-        <EditText
-                android:id="@+id/time"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:hint="HH:MM"/>
-        <Button
-            android:id="@+id/enviar"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_marginTop="10dp"
-            android:layout_width="250dp"
-            android:layout_height="50dp"
-            android:text="Guardar Partido"/>
+                android:layout_height="50dp"
+                android:background="@color/black"
+                android:textColor="@color/white"
+                android:text="Guardar Partido"/>
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+</ScrollView>

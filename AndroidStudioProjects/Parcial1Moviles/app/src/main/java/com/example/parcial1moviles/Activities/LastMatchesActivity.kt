@@ -50,5 +50,8 @@ class LastMatchesActivity : AppCompatActivity(), ListMatches.OnFragmentInteracti
     }
     override fun onClickScores(match: Matches) {
         initFragment(match)
+        var valueh = resources.configuration.screenHeightDp
+        var valuew = resources.configuration.screenWidthDp
+        Toast.makeText(this, valuew.toString()+"x"+valueh.toString(), Toast.LENGTH_SHORT).show()
     }
 }

@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-                >
+                                   android:layout_width="match_parent"
+                                   android:layout_height="wrap_content"
+                                   android:layout_marginTop="15dp"
+                                   android:layout_marginBottom="10dp"
+                                   android:layout_marginRight="10dp"
+                                   android:layout_marginLeft="10dp"
+                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                   app:cardCornerRadius="10dp"
+                                   app:cardBackgroundColor="@color/orange"
+>
     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="25sp">
         <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:orientation="horizontal" android:layout_gravity="center" android:layout_marginTop="20sp">
-            <TextView android:id="@+id/teama" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Team A" android:layout_marginRight="10sp" />
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="VS"/>
-            <TextView android:id="@+id/teamb" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Team B" android:layout_marginLeft="10sp"/>
+        android:orientation="horizontal" android:layout_gravity="center">
+            <TextView android:id="@+id/teama" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Team A" android:layout_marginRight="5sp" android:textColor="@color/white" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="VS" android:textColor="@color/white" />
+            <TextView android:id="@+id/teamb" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Team B" android:layout_marginLeft="5sp" android:textColor="@color/white"/>
         </LinearLayout>
-        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_gravity="center" android:layout_marginTop="20sp">
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center"  android:text="Winner:" android:layout_marginRight="5sp" />
-            <TextView android:id="@+id/winner" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Team"/>
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_gravity="center" android:layout_marginTop="10sp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center"  android:text="Winner:" android:layout_marginRight="5sp" android:textColor="@color/white" />
+            <TextView android:id="@+id/winner" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Team" android:textColor="@color/white"/>
     </LinearLayout>
     </LinearLayout>
 

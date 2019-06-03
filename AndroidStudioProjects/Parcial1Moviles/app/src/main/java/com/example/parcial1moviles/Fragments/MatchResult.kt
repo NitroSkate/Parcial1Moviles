@@ -42,7 +42,13 @@ class MatchResult : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_match_result, container, false)
         view.apply {
+            teama.text = matches?.team1
+            teamB.text = matches?.team2
+            scorea.text = matches?.points1.toString()
+            scoreb.text = matches?.points2.toString()
             team.text = matches?.winner
+            datem.text = matches?.date
+            timem.text = matches?.time
             finish.setOnClickListener {
                 var finish = Matches("","",0,0,"","","")
                 listener?.onClickScores(finish)
