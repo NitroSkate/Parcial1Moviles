@@ -35,7 +35,7 @@ class LastMatchesActivity : AppCompatActivity(), ListMatches.OnFragmentInteracti
                 listfragment = ListMatches.newInstance()
                 changefragment(R.id.fragment, listfragment)
             } else {
-                Toast.makeText(this, "olv", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this, "olv", Toast.LENGTH_SHORT).show()
                 Title.text = "Resultados del partido"
                 matchResult = com.example.parcial1moviles.Fragments.MatchResult.newInstance(match)
                 changefragment(R.id.fragment, matchResult)
@@ -53,7 +53,7 @@ class LastMatchesActivity : AppCompatActivity(), ListMatches.OnFragmentInteracti
         supportFragmentManager.beginTransaction().replace(id, frag).commit()
     }
     override fun onClickListElement(match: Matches) {
-        Toast.makeText(this, match.date, Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this, match.date, Toast.LENGTH_SHORT).show()
         initFragment(match)
     }
     override fun onClickListElementLand(match: Matches) {
@@ -65,6 +65,6 @@ class LastMatchesActivity : AppCompatActivity(), ListMatches.OnFragmentInteracti
         initFragment(match)
         var valueh = resources.configuration.screenHeightDp
         var valuew = resources.configuration.screenWidthDp
-        Toast.makeText(this, valuew.toString()+"x"+valueh.toString(), Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this, valuew.toString()+"x"+valueh.toString(), Toast.LENGTH_SHORT).show()
     }
 }
